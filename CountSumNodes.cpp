@@ -22,6 +22,13 @@ int countNodes(tree *root)
     return countNodes(root->left)+countNodes(root->right)+1;
 }
 
+int sumNodes(tree *root)
+{
+    if (root==NULL)
+        return 0;
+
+    return sumNodes(root->left)+sumNodes(root->right)+root->data;
+}
 
 int main()
 {
@@ -36,6 +43,7 @@ int main()
 
     root->right->right=new tree(60);
 
-    cout<<" Total number of nodes: "<<countNodes(root);
+    cout<<"Total number of nodes: "<<countNodes(root);
+    cout<<"\nSum of nodes: "<<sumNodes(root);
 
 }
